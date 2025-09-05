@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creación de Estudiante</title>
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+        .form-card {
+            background: #fff;
+            border-radius: 50px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 9rem 2rem;
+            max-width: 500px;
+            margin: 40px auto;
+            
+        }
+        .title {
+            color: #3273dc;
+        }
+        .button.is-link {
+            background: linear-gradient(90deg, #3273dc 0%, #00c6ff 100%);
+            border: none;
+            color: #fff;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .button.is-link:hover {
+            background: linear-gradient(90deg, #00c6ff 0%, #3273dc 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="form-card">
+        <h1 class="title is-3 has-text-centered">Agregar Nuevo Alumno</h1>
+        <form method="POST" action="/create">
+            <div class="field">
+                <label class="label">Nombre</label>
+                <div class="control">
+                    <input class="input" type="text" name="nombre" placeholder="Nombre del alumno" required>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Apellidos</label>
+                <div class="control">
+                    <input class="input" type="text" name="apellido" placeholder="Apellidos del alumno" required>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Correo Electrónico</label>
+                <div class="control">
+                    <input class="input" type="email" name="correo" placeholder="Correo electrónico del alumno" required>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Teléfono</label>
+                <div class="control">
+                    <input class="input" type="text" name="telefono" placeholder="Teléfono del alumno" required>
+                </div>
+            </div>
+            <div class="field is-grouped is-grouped-centered">
+                <div class="control">
+                    <button class="button is-link" type="submit">Guardar</button>
+                </div>
+                <div class="control">
+                    <a href="/" class="button is-link">Regresar</a>
+                </div>
+                
+            </div>
+        </form>
+    </div>
+</body>
+</html>
