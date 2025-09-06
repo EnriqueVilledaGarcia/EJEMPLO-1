@@ -8,9 +8,36 @@
             <span class="icon">
                 <i class="fas fa-user-plus"></i>
             </span>
-            <span>Agregar Nuevo Alumno</span>
+            <span>Agregar Nuevo Alumno/Alumna</span>
         </a>
     </div>
+</div>
+<div class="container" style="margin-top: 20px;">
+    <table class="table is-fullwidth is-striped is-hoverable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Correo Electrónico</th>
+                <th>Teléfono</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            {% for estudiante in estudiantes %}
+            <tr>
+                <td>{{ estudiante.id }}</td>
+                <td>{{ estudiante.nombre }}</td>
+                <td>{{ estudiante.apellido}}</td>
+                <td>{{ estudiante.email }}</td>
+                <td>{{ estudiante.telefono }}</td>
+                
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
 
 

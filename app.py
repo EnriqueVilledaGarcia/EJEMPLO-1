@@ -28,7 +28,8 @@ with app.app_context():
 #Ruta principal home
 @app.route('/')
 def index():
-    return render_template('index.html')
+    estudiantes = Estudiante.query.all()
+    return render_template('index.html', estudiantes=estudiantes)
 
 @app.route('/create', methods=['GET', 'POST'])
 def create():
