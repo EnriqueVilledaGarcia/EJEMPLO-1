@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Estudiante</title>
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+       
+        .form-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 2.5rem 2rem;
+            max-width: 500px;
+            margin: 40px auto;
+        }
+        .title {
+            color: #3273dc;
+        }
+        .button.is-link {
+            background: linear-gradient(90deg, #3273dc 0%, #00c6ff 100%);
+            border: none;
+            color: #fff;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .button.is-link:hover {
+            background: linear-gradient(90deg, #00c6ff 0%, #3273dc 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="form-card">
+        <h1 class="title is-3 has-text-centered">Editar Estudiante</h1>
+        <form method="POST" action="/edit/{{ estudiante.id }}">
+            <div class="field">
+                <label class="label" for="nombre">Nombre</label>
+                <div class="control">
+                    <input class="input" type="text" id="nombre" name="nombre" value="{{ estudiante.nombre }}" required>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="apellido">Apellidos</label>
+                <div class="control">
+                    <input class="input" type="text" id="apellido" name="apellido" value="{{ estudiante.apellido }}" required>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="correo">Correo Electrónico</label>
+                <div class="control">
+                    <input class="input" type="email" id="correo" name="correo" value="{{ estudiante.email }}" required>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="telefono">Teléfono</label>
+                <div class="control">
+                    <input class="input" type="text" id="telefono" name="telefono" value="{{ estudiante.telefono }}" required>
+                </div>
+            </div>
+            <div class="field is-grouped is-grouped-centered">
+                <div class="control">
+                    <button class="button is-link" type="submit">Guardar Cambios</button>
+                    <button class="button is-link" type="button" onclick="window.location.href='/'">Cancelar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

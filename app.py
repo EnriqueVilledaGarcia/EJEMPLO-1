@@ -43,3 +43,16 @@ def create():
         db.session.commit()
         return redirect(url_for('index'))
     return render_template('formulario.html')
+
+
+@app.route('/edit/<int:id>', methods=['GET', 'POST'])
+def edit(id):
+    estudiante = Estudiante.query.get_or_404(id)
+    if request.method == 'POST':
+        estudiante.nombre = request.form['nombre']
+        estudiante.apellido = request.form['apellido']
+        estudiante.email = request.form['correo']
+        estudiante.telefono = request.form['telefono']
+        db.session.commit()
+        return redirect(url_for('index'))
+    return render_template('editar.html', estudiante=estudiante)

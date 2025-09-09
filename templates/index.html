@@ -21,7 +21,7 @@
                 <th>Apellidos</th>
                 <th>Correo Electrónico</th>
                 <th>Teléfono</th>
-               
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -32,8 +32,12 @@
                 <td>{{ estudiante.apellido}}</td>
                 <td>{{ estudiante.email }}</td>
                 <td>{{ estudiante.telefono }}</td>
-                
-                
+                <td>
+                    <a href="{{ url_for('edit', id=estudiante.id) }}" class="button is-info">
+                        <span>Editar</span>
+                    </a>
+
+                </td>
             </tr>
             {% endfor %}
         </tbody>
