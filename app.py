@@ -56,3 +56,10 @@ def edit(id):
         db.session.commit()
         return redirect(url_for('index'))
     return render_template('editar.html', estudiante=estudiante)
+
+@app.route('/delete/<int:id>', methods=['GET'])
+def delete(id):
+    estudiante = Estudiante.query.get_or_404(id)
+    db.session.delete(estudiante)
+    db.session.commit()
+    return redirect(url_for('index'))       
